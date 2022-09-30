@@ -1,12 +1,16 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from './Book';
 import BookForm from './BookForm';
-import { AddBookFunc, RemoveBookFunc } from '../redux/books/books';
+import { AddBookFunc, getBooksFunc, RemoveBookFunc } from '../redux/books/books';
 
 const Books = () => {
   const dispatch = useDispatch();
   const StoredBook = useSelector((state) => state.BooksReducer);
+
+  useEffect(() => {
+    dispatch(getBooksFunc());
+  }, [dispatch]);
 
   const AddNewBook = (e, NewBook) => {
     e.preventDefault();
@@ -21,6 +25,7 @@ const Books = () => {
         <Book
           title={item.title}
           author={item.author}
+          category={item.category}
           key={item.id}
           id={item.id}
           RemoveExistingBook={RemoveExistingBook}

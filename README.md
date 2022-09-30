@@ -8,6 +8,8 @@
  - css
  - Linters
  - Redux
+ - Axios
+
 
 ## Getting Started
 

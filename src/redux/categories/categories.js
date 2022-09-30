@@ -9,7 +9,7 @@ export const CheckStatusFunc = () => ({
 const CategoriesReducer = (state = categories, action) => {
   switch (action.type) {
     case CHECK_STATUS:
-      return 'Under construction';
+      return ['Under construction'];
     default: return state;
   }
 };

@@ -7,6 +7,7 @@
  - React,
  - css
  - Linters
+ - Redux
 
 ## Getting Started
 
